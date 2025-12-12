@@ -3,92 +3,43 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Cambodia Kiteboarding — Richard.file42</title>
-<meta name="description" content="Cambodia Kiteboarding interactive demo — hero video modal, packages, gallery and calculator." />
+<title>Cambodia Kiteboarding — Richard.file42 (Final)</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Header -->
-<header class="site-header" role="banner">
-  <div class="header-inner container">
-    <div class="brand">Cambodia Kiteboarding</div>
+<header class="site-header"><div class="container header-inner"><div class="brand">Cambodia Kiteboarding</div>
+<nav class="main-nav"><ul id="navList"><li><a href="#hero">Home</a></li><li><a href="#packages">Packages</a></li><li><a href="#hotel">Hotel</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#calculator">Calculator</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul><div id="navUnderline" class="nav-underline"></div></nav>
+<div class="actions"><button class="btn ghost" id="themeToggle">Toggle</button><button class="btn small" onclick="document.querySelector('#calculator').scrollIntoView({behavior:'smooth'})">Build Quote</button></div>
+</div></header>
 
-    <nav class="main-nav" aria-label="Primary navigation">
-      <ul id="navList">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#hotel">Hotel</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#calculator">Calculator</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-underline" id="navUnderline" aria-hidden="true"></div>
-    </nav>
-
-    <div class="actions">
-      <button id="themeToggle" class="btn small ghost" aria-pressed="false">Toggle</button>
-      <button class="btn small" onclick="document.querySelector('#calculator').scrollIntoView({behavior:'smooth'})">Build Quote</button>
-    </div>
-  </div>
-</header>
-
-<!-- HERO with VIDEO SLOT -->
 <section id="hero" class="hero">
-  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
-
-  <div class="hero-card container" role="region" aria-label="hero card">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-card container">
     <div class="hero-left">
       <h1>Learn to Kite in Cambodia — Safe, shallow & certified</h1>
       <p class="lead">IKO-guided lessons on Kampong Bay estuary. Ideal for beginners, kids and families — Villa Vedici is our base.</p>
-
-      <div class="packages" id="packageButtons" aria-hidden="false">
-        <!-- interactive package buttons injected by script -->
-      </div>
-
-      <div class="symbols" aria-hidden="true">
-        <div class="symbol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#e6f9fb"/></svg><span>Safe Spot</span></div>
-        <div class="symbol"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="#fff3e6"/></svg><span>IKO Certified</span></div>
-        <div class="symbol"><svg viewBox="0 0 24 24"><path d="M2 12h20" stroke="#e6f9fb" stroke-width="2"/></svg><span>Shallow Water</span></div>
-      </div>
+      <div class="packages" id="packageButtons"></div>
     </div>
-
     <div>
-      <!-- Video slot (Option A: modal play) -->
-      <div class="video-slot" id="videoSlot" role="button" aria-label="Play intro video" tabindex="0">
-        <div class="play" id="playBtn">▶</div>
-        <div class="video-desc">Play intro — 2 min</div>
-      </div>
-
-      <!-- condensed CTA -->
-      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
-        <a class="btn ghost small" href="#gallery">View Gallery</a>
-        <a class="btn small" href="https://wa.me/85589392068?text=Hi%20I%20need%20help%20choosing%20a%20package" target="_blank">WhatsApp</a>
-      </div>
+      <div class="video-slot" id="videoSlot" tabindex="0"><div class="play" id="playBtn">▶</div><div class="video-desc">Play intro — 2 min</div></div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end"><a class="btn ghost small" href="#gallery">View Gallery</a><a class="btn small" href="https://wa.me/85589392068?text=Hi%20I%20need%20help" target="_blank">WhatsApp</a></div>
     </div>
   </div>
 </section>
 
-<!-- HOTEL & GALLERY -->
 <section id="hotel" class="container" style="padding-top:22px">
   <h2>Villa Vedici — Overview</h2>
   <p class="small-muted">Villa Vedici riverside resort in Kampot is our base for the all-inclusive packages.</p>
-
   <div id="gallery" class="gallery">
     <div class="g-item" tabindex="0" onclick="openLightbox('Villa 1')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
     <div class="g-item" tabindex="0" onclick="openLightbox('Villa 2')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
     <div class="g-item" tabindex="0" onclick="openLightbox('Villa 3')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
   </div>
-
-  <div style="text-align:center;margin-top:12px">
-    <a class="btn" href="https://www.booking.com/hotel/kh/villa-vedici.html" target="_blank">Book Villa Vedici on Booking.com</a>
-  </div>
+  <div style="text-align:center;margin-top:12px"><a class="btn" href="https://www.booking.com/hotel/kh/villa-vedici.html" target="_blank">Book Villa Vedici on Booking.com</a></div>
 </section>
 
-<!-- Calculator -->
 <section id="calculator" class="container" style="padding-top:28px">
   <h2>Build your All-Inclusive Kite Package</h2>
-
   <div class="calc-wrap" id="ckbCalculator">
     <div class="calc-row">
       <div class="calc-field"><label><strong>Nights</strong></label><input id="nights" type="number" min="1" value="5"></div>
@@ -102,13 +53,11 @@
       <div class="calc-field"><label><strong>Photoshoot</strong></label><div style="margin-top:8px"><input id="photoshoot" type="checkbox"> <label for="photoshoot">Yes — $55 / person</label></div></div>
       <div class="calc-field"><label><strong>Group lesson</strong></label><div style="margin-top:8px"><input id="groupLesson" type="checkbox"> <label for="groupLesson">Group toggled = $80/hr</label></div><div class="small-muted" style="margin-top:6px">2 hours/day / person</div></div>
     </div>
-
     <div class="calc-footer">
       <button id="calcBtn" class="btn">Calculate</button>
       <button id="resetBtn" class="btn ghost">Reset</button>
       <div class="calc-total">Estimated: <strong id="totalDisplay">$0.00</strong></div>
     </div>
-
     <div class="result-box" id="calcResults">
       <div id="breakdown"><em>Press Calculate for a full breakdown</em></div>
       <div style="margin-top:10px;display:flex;gap:8px"><a id="emailRequest" class="btn-link" href="#">Request Booking (email)</a><a id="waRequest" class="btn-wa" href="#">WhatsApp Owner</a></div>
@@ -117,7 +66,1252 @@
   </div>
 </section>
 
-<!-- FAQ -->
+<div class="detailed-packages-wrapper" style="max-width:1140px;margin:18px auto;">
+  <div style="display:flex;justify-content:center">
+    <button id="togglePackagesBtn" class="btn ghost" aria-expanded="false">Show Detailed Packages</button>
+  </div>
+  <div id="detailedPackages" style="display:none;margin-top:12px;">
+<style>
+/* ============================================================
+   2025 ORANGE KITE SCHOOL PRICING SYSTEM — MASTER EDITION
+   ============================================================ */
+
+/* THEME VARIABLES */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #fdf8f3;
+  --text: #202020;
+  --border: #e2e2e2;
+  --accent: #ff7a00;
+  --accent-light: #ffe0c2;
+  --accent-superlight: #fff4ea;
+  --radius: 14px;
+  --transition: 0.25s ease;
+  --shadow: 0 10px 30px rgba(0,0,0,0.14);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161616;
+    --bg-alt: #222;
+    --text: #f2f2f2;
+    --border: #333;
+    --accent: #ff9c3a;
+    --accent-light: #4a2d0f;
+    --accent-superlight: #3a2412;
+    --shadow: 0 10px 30px rgba(0,0,0,0.55);
+  }
+}
+
+#kitePricingWrapper {
+  max-width: 100%;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+/* HEADINGS */
+#kitePricingWrapper h2,
+#kitePricingWrapper h3 {
+  margin: 0 0 10px;
+}
+#kitePricingWrapper h2 {
+  font-size: 26px;
+}
+#kitePricingWrapper h3 {
+  font-size: 20px;
+  margin-top: 26px;
+}
+
+/* NEW: tiny “from X per day” label */
+.from-price-label {
+  font-size: 13px;
+  color: #555;
+  margin: 2px 0 8px;
+}
+@media (prefers-color-scheme: dark) {
+  .from-price-label {
+    color: #e9e9e9;
+  }
+}
+
+.helper-text {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* TOP CONTROLS (sticky bar) */
+.top-controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  padding-bottom: 8px;
+}
+
+/* LEVEL TOGGLE */
+.level-toggle {
+  display: inline-flex;
+  gap: 6px;
+  margin: 12px 0 4px;
+  flex-wrap: wrap;
+}
+.level-toggle button {
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  background: var(--accent-superlight);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.level-toggle button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* BEST VALUE BUTTON */
+.best-value-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 6px;
+}
+.best-value-btn {
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.best-value-btn span {
+  font-size: 14px;
+}
+.best-value-btn:hover,
+.best-value-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* SEARCH + FILTERS */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
+  background: var(--accent-superlight);
+  transition: var(--transition);
+  font-size: 14px;
+  color: var(--text);
+}
+
+.filter-bar input {
+  flex: 2 1 220px;
+}
+.filter-bar select {
+  flex: 1 1 150px;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  outline: none;
+}
+
+/* SEARCH SUGGESTIONS */
+.search-suggestions {
+  margin-bottom: 10px;
+}
+.search-suggestions span {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: var(--accent-superlight);
+  border: 1px solid var(--accent-light);
+  margin: 3px 4px 0 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.search-suggestions span:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* TABLE SHELL */
+.table-shell {
+  overflow-x: auto;
+  border-radius: var(--radius);
+}
+
+/* TABLE */
+table#packageTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* HEADER */
+#packageTable th {
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 10px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  user-select: none;
+  white-space: nowrap;
+  font-size: 13px;
+}
+#packageTable th:hover {
+  background: #ff8f26;
+}
+
+/* BASIC ROWS */
+#packageTable td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+/* READABILITY — TABLE TEXT */
+#packageTable td {
+  color: #f5f5f5; /* near white for dark mode baseline */
+}
+@media (prefers-color-scheme: light) {
+  #packageTable td {
+    color: #2a2a2a; /* premium dark grey in light mode */
+  }
+}
+
+/* LEVEL TINTS */
+#packageTable tbody tr.pkg-row[data-level="Beginner"] td {
+  background: rgba(0, 180, 230, 0.08);
+}
+#packageTable tbody tr.pkg-row[data-level="Intermediate"] td {
+  background: rgba(255, 200, 80, 0.10);
+}
+#packageTable tbody tr.pkg-row[data-level="Advanced"] td {
+  background: rgba(255, 80, 80, 0.10);
+}
+
+/* DARK MODE TEXT ON TINTS */
+@media (prefers-color-scheme: dark) {
+  #packageTable tbody tr.pkg-row[data-level="Beginner"] td,
+  #packageTable tbody tr.pkg-row[data-level="Intermediate"] td,
+  #packageTable tbody tr.pkg-row[data-level="Advanced"] td {
+    color: #fafafa !important;
+  }
+}
+
+/* HOVER GLOW */
+#packageTable tbody tr.pkg-row:hover td {
+  background: rgba(255, 153, 51, 0.22) !important;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 12px rgba(255, 122, 0, 0.25);
+}
+#packageTable tbody tr.pkg-row:hover {
+  outline: 2px solid rgba(255, 122, 0, 0.55);
+  outline-offset: -2px;
+  border-radius: 6px;
+}
+
+/* DARK / LIGHT HEADER ADJUST */
+@media (prefers-color-scheme: light) {
+  #packageTable tbody tr.pkg-row:hover td {
+    background: rgba(255, 132, 28, 0.16) !important;
+  }
+  #packageTable th {
+    background: #ff7b00;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  #packageTable th {
+    background: #ff9c3a;
+  }
+  #packageTable td {
+    color: #f3f3f3 !important;
+  }
+  #packageTable tbody tr.pkg-row:hover td {
+    background: rgba(255, 160, 70, 0.25) !important;
+  }
+}
+
+/* LEVEL BADGES (unchanged as requested) */
+.level-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.level-badge.Beginner { background: #FFA500; color: #006787; }
+.level-badge.Intermediate { background: #FFA500; color: #7d6000; }
+.level-badge.Advanced { background: #FFA500; color: #8b0018; }
+.level-badge.Beginner,
+.level-badge.Intermediate,
+.level-badge.Advanced {
+  color: inherit !important;
+}
+
+/* ICONS & RECOMMENDED PILL */
+.pkg-icon {
+  margin-right: 6px;
+}
+.recommended-pill {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #ffefde;
+  color: #b35a00;
+}
+@media (prefers-color-scheme: dark) {
+  .recommended-pill {
+    background: #3a2412;
+    color: #ffcf8a;
+  }
+}
+.pkg-row.recommended td {
+  border-top: 2px solid rgba(255, 122, 0, 0.7);
+  border-bottom: 2px solid rgba(255, 122, 0, 0.7);
+}
+
+/* DETAILS ROW */
+.details-row {
+  display: none;
+  background: var(--bg-alt);
+}
+.details-row td {
+  font-size: 12px;
+  color: #222;
+}
+.details-row-content {
+  padding: 8px 4px;
+}
+.details-row-content p {
+  margin: 4px 0;
+}
+.details-row-content ul {
+  margin: 4px 0 0 16px;
+  padding: 0;
+}
+.details-row-content li {
+  margin: 2px 0;
+}
+
+/* Click hint */
+.click-hint {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #kitePricingWrapper {
+    padding: 16px;
+  }
+  #packageTable th,
+  #packageTable td {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+}
+
+/* ========== CALCULATOR ========== */
+#packageCalculator {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--accent-superlight);
+  border: 1px solid var(--accent-light);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.calc-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.calc-field input,
+.calc-field select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.calc-field input[type="range"] {
+  padding: 0;
+}
+
+.calc-inline-note {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* SUMMARY – MAKE TEXT DARKER & CLEAR */
+.calc-summary {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 8px;
+  font-size: 13px;
+}
+.calc-summary div {
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  color: #111 !important;
+  font-weight: 600;
+}
+.calc-summary strong {
+  color: #000 !important;
+}
+
+/* Book button */
+.book-btn {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.book-btn:hover {
+  background: #ff8f26;
+  transform: translateY(-1px);
+}
+
+/* Legend */
+.legend {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+/* Detail animation */
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<div id="kitePricingWrapper">
+  <h2>Kite Packages with Accommodation</h2>
+  <!-- NEW tiny label -->
+  <p id="fromPriceLabel" class="from-price-label">From $X.XX per day kite &amp; stay packages</p>
+
+  <p class="helper-text">
+    All packages include accommodation and transfers. Choose between <strong>Bed &amp; Breakfast</strong>
+    or <strong>All Inclusive</strong> (breakfast &amp; dinner). Click on any package row to see more details.
+  </p>
+
+  <div class="top-controls">
+    <!-- LEVEL TOGGLE -->
+    <div class="level-toggle">
+      <button type="button" class="level-toggle-btn active" data-level="">All levels</button>
+      <button type="button" class="level-toggle-btn" data-level="Beginner">Beginner</button>
+      <button type="button" class="level-toggle-btn" data-level="Intermediate">Intermediate</button>
+      <button type="button" class="level-toggle-btn" data-level="Advanced">Advanced</button>
+    </div>
+
+    <!-- BEST VALUE BUTTON -->
+    <div class="best-value-wrap">
+      <button type="button" class="best-value-btn" id="bestValueBtn">
+        <span>⭐</span> Sort by Best Value
+      </button>
+    </div>
+
+    <!-- SEARCH + FILTERS -->
+    <div class="filter-bar">
+      <input id="searchInput" type="text"
+             placeholder="Search: beginner, 7 days, all inclusive, rental only…">
+      <select id="levelFilter">
+        <option value="">Filter by level</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+      <select id="boardFilter">
+        <option value="">Board type</option>
+        <option value="Bed & Breakfast">Bed &amp; Breakfast</option>
+        <option value="All Inclusive">All Inclusive</option>
+      </select>
+    </div>
+    <div class="search-suggestions">
+      <span data-term="beginner">beginner</span>
+      <span data-term="private">private</span>
+      <span data-term="weekend">weekend</span>
+      <span data-term="7 days">7 days</span>
+      <span data-term="all inclusive">all inclusive</span>
+      <span data-term="rental only">rental only</span>
+    </div>
+  </div>
+
+  <!-- PACKAGES TABLE -->
+  <div class="table-shell">
+    <table id="packageTable">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Package</th>
+          <th>Days</th>
+          <th>Board</th>
+          <th>Level</th>
+          <th>Lessons Included</th>
+          <th>Lesson Value</th>
+          <th>Rental Included</th>
+          <th>Rental Value</th>
+          <th>Accommodation</th>
+          <th>Insurance</th>
+          <th>Discount</th>
+          <th>Total Package</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- P1 -->
+        <tr class="pkg-row" data-level="Beginner">
+          <td>P1</td>
+          <td><span class="pkg-icon">🪁</span>1-Day Private Discovery</td>
+          <td>1</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Beginner">Beginner</span></td>
+          <td>🎓 2 hrs Private Coaching</td>
+          <td class="price-tag">$110.00</td>
+          <td>—</td>
+          <td>—</td>
+          <td>🛏 + 🥐 $50.00</td>
+          <td>$10.00</td>
+          <td>5%</td>
+          <td class="price-tag">$161.50</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Curious first-timers who want a safe, guided introduction.</p>
+              <ul>
+                <li>1 night Bed &amp; Breakfast accommodation (🛏 + 🥐)</li>
+                <li>2 hours of private, 1-on-1 coaching (🎓)</li>
+                <li>All basic safety &amp; beach theory included</li>
+                <li>Insurance included on your riding day</li>
+              </ul>
+              <p class="click-hint">Tip: Great add-on to a beach holiday if you want to “try kiteboarding once”.</p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P2 -->
+        <tr class="pkg-row" data-level="Beginner">
+          <td>P2</td>
+          <td><span class="pkg-icon">🪁</span>Weekend Taster – Group</td>
+          <td>2</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Beginner">Beginner</span></td>
+          <td>👥 4 hrs Group (2 × 2h)</td>
+          <td class="price-tag">$160.00</td>
+          <td>Gear during lessons included</td>
+          <td>Included</td>
+          <td>🛏 + 🥐 $100.00</td>
+          <td>$20.00</td>
+          <td>15%</td>
+          <td class="price-tag">$238.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Friends or couples sharing the experience over a weekend.</p>
+              <ul>
+                <li>2 nights Bed &amp; Breakfast</li>
+                <li>Group atmosphere with shared progression</li>
+                <li>All equipment included during lessons</li>
+                <li>Insurance during your riding days</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P3 -->
+        <tr class="pkg-row" data-level="Beginner">
+          <td>P3</td>
+          <td><span class="pkg-icon">🪁</span>3-Day Beginner Course B&amp;B</td>
+          <td>3</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Beginner">Beginner</span></td>
+          <td>🎓 Beginner Course (3 days / 8 hrs)</td>
+          <td class="price-tag">$515.00</td>
+          <td>Gear during lessons included</td>
+          <td>Included</td>
+          <td>🛏 + 🥐 $150.00</td>
+          <td>$30.00</td>
+          <td>15%</td>
+          <td class="price-tag">$590.75</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Total beginners who want to reach first rides on the board.</p>
+              <ul>
+                <li>Full IKO-style beginner progression (theory + practice)</li>
+                <li>Dedicated beach &amp; shallow water training</li>
+                <li>3 nights Bed &amp; Breakfast</li>
+                <li>Insurance during all water sessions</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P4 -->
+        <tr class="pkg-row" data-level="Beginner">
+          <td>P4</td>
+          <td><span class="pkg-icon">🪁</span>3-Day Beginner Course All Inclusive</td>
+          <td>3</td>
+          <td>All Inclusive</td>
+          <td><span class="level-badge Beginner">Beginner</span></td>
+          <td>🎓 Beginner Course (3 days / 8 hrs)</td>
+          <td class="price-tag">$515.00</td>
+          <td>Gear during lessons included</td>
+          <td>Included</td>
+          <td>🛏 + 🥐🍽 $195.00</td>
+          <td>$30.00</td>
+          <td>15%</td>
+          <td class="price-tag">$629.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Beginners who don’t want to think about meals or logistics.</p>
+              <ul>
+                <li>Breakfast &amp; dinner included every day</li>
+                <li>8 hours of structured beginner lessons</li>
+                <li>3 nights All Inclusive accommodation</li>
+                <li>Insurance on all riding days</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P5 -->
+        <tr class="pkg-row recommended" data-level="Intermediate">
+          <td>P5</td>
+          <td><span class="pkg-icon">🪁</span>5-Day Progression Camp B&amp;B <span class="recommended-pill">Recommended</span></td>
+          <td>5</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Intermediate">Intermediate</span></td>
+          <td>🎓 Beginner Course + 2 hrs Private</td>
+          <td class="price-tag">$625.00</td>
+          <td>🏄‍♂️ 3 Days Full Equipment Rental</td>
+          <td class="price-tag">$360.00</td>
+          <td>🛏 + 🥐 $250.00</td>
+          <td>$50.00</td>
+          <td>15%</td>
+          <td class="price-tag">$1,092.25</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Riders who want to go from first rides to confident upwind riding.</p>
+              <ul>
+                <li>Blend of course + private coaching to polish technique</li>
+                <li>3 full days of gear rental to practice independently</li>
+                <li>5 nights Bed &amp; Breakfast</li>
+                <li>Insurance on all days on the water</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P6 -->
+        <tr class="pkg-row recommended" data-level="Intermediate">
+          <td>P6</td>
+          <td><span class="pkg-icon">🪁</span>5-Day Progression Camp All Inclusive <span class="recommended-pill">Recommended</span></td>
+          <td>5</td>
+          <td>All Inclusive</td>
+          <td><span class="level-badge Intermediate">Intermediate</span></td>
+          <td>🎓 Progression Course + 2 hrs Private</td>
+          <td class="price-tag">$745.00</td>
+          <td>🏄‍♂️ 3 Days Full Equipment Rental</td>
+          <td class="price-tag">$360.00</td>
+          <td>🛏 + 🥐🍽 $325.00</td>
+          <td>$50.00</td>
+          <td>20%</td>
+          <td class="price-tag">$1,184.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Progressing riders who want a full “kite holiday” experience.</p>
+              <ul>
+                <li>All meals taken care of – just ride &amp; relax</li>
+                <li>High coaching volume + independent practice</li>
+                <li>5 nights All Inclusive accommodation</li>
+                <li>20% long-stay discount already included</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P7 -->
+        <tr class="pkg-row" data-level="Advanced">
+          <td>P7</td>
+          <td><span class="pkg-icon">🪁</span>7-Day Rider Week B&amp;B</td>
+          <td>7</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Advanced">Advanced</span></td>
+          <td>🎓 3 hrs Private Coaching</td>
+          <td class="price-tag">$165.00</td>
+          <td>🏄‍♂️ 1 Week Full Equipment Rental</td>
+          <td class="price-tag">$875.00</td>
+          <td>🛏 + 🥐 $350.00</td>
+          <td>$70.00</td>
+          <td>20%</td>
+          <td class="price-tag">$1,168.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Independent riders who want a full week of freedom with a coaching refresh.</p>
+              <ul>
+                <li>1 week full equipment rental – ride every day</li>
+                <li>3 hours private coaching to fine tune tricks &amp; style</li>
+                <li>7 nights Bed &amp; Breakfast</li>
+                <li>20% long-stay discount applied</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P8 -->
+        <tr class="pkg-row recommended" data-level="Advanced">
+          <td>P8</td>
+          <td><span class="pkg-icon">🪁</span>7-Day Rider Week All Inclusive <span class="recommended-pill">Recommended</span></td>
+          <td>7</td>
+          <td>All Inclusive</td>
+          <td><span class="level-badge Advanced">Advanced</span></td>
+          <td>🎓 3 hrs Private Coaching</td>
+          <td class="price-tag">$165.00</td>
+          <td>🏄‍♂️ 1 Week Full Equipment Rental</td>
+          <td class="price-tag">$875.00</td>
+          <td>🛏 + 🥐🍽 $455.00</td>
+          <td>$70.00</td>
+          <td>20%</td>
+          <td class="price-tag">$1,252.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Advanced riders wanting a pure “arrive &amp; ride” experience.</p>
+              <ul>
+                <li>All meals included – zero planning</li>
+                <li>Unlimited feel of a kite holiday with coaching &amp; rental</li>
+                <li>7 nights All Inclusive accommodation</li>
+                <li>20% long-stay discount already built in</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P9 -->
+        <tr class="pkg-row" data-level="Advanced">
+          <td>P9</td>
+          <td><span class="pkg-icon">🪁</span>3-Day Rental Escape B&amp;B</td>
+          <td>3</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Advanced">Advanced</span></td>
+          <td>— (rental only)</td>
+          <td>—</td>
+          <td>🏄‍♂️ 3 Days Full Equipment Rental</td>
+          <td class="price-tag">$360.00</td>
+          <td>🛏 + 🥐 $150.00</td>
+          <td>$30.00</td>
+          <td>10%</td>
+          <td class="price-tag">$486.00</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Short trips for independent riders bringing only their harness.</p>
+              <ul>
+                <li>3 days full gear rental included</li>
+                <li>3 nights Bed &amp; Breakfast</li>
+                <li>Insurance on all days on the water</li>
+                <li>Ideal for windy long weekend escapes</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+
+        <!-- P10 -->
+        <tr class="pkg-row" data-level="Advanced">
+          <td>P10</td>
+          <td><span class="pkg-icon">🪁</span>7-Day Rental Escape B&amp;B</td>
+          <td>7</td>
+          <td>Bed &amp; Breakfast</td>
+          <td><span class="level-badge Advanced">Advanced</span></td>
+          <td>— (rental only)</td>
+          <td>—</td>
+          <td>🏄‍♂️ 1 Week Full Equipment Rental</td>
+          <td class="price-tag">$875.00</td>
+          <td>🛏 + 🥐 $350.00</td>
+          <td>$70.00</td>
+          <td>10%</td>
+          <td class="price-tag">$1,165.50</td>
+        </tr>
+        <tr class="details-row">
+          <td colspan="13">
+            <div class="details-row-content">
+              <p><strong>Perfect for:</strong> Advanced riders who want “gear-ready” kite holidays without lessons.</p>
+              <ul>
+                <li>Full week gear rental – ride whenever it’s windy</li>
+                <li>7 nights Bed &amp; Breakfast</li>
+                <li>Insurance on all riding days</li>
+                <li>10% long-stay discount included</li>
+              </ul>
+              <p class="click-hint">Click another package row to compare details.</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="legend">
+    Bed &amp; Breakfast options include a healthy breakfast every morning. All Inclusive adds dinner on top.
+    Insurance is $10 per day when you are on the water. Long-stay discounts (5–20%) are already included in the totals.
+  </p>
+
+  <!-- ================== LIVE PACKAGE CALCULATOR ================== -->
+  <h3>Build Your Custom Package</h3>
+  <p class="helper-text">
+    Use the calculator below to design your own stay. Prices are based on the same lesson, rental and accommodation
+    rates that we used for the packages above.
+  </p>
+
+  <div id="packageCalculator">
+    <div class="calc-grid">
+      <div class="calc-field">
+        <label for="calcDays">Number of days</label>
+        <input type="range" id="calcDays" min="1" max="14" value="3">
+        <div class="calc-inline-note" id="calcDaysLabel">3 days</div>
+      </div>
+
+      <div class="calc-field">
+        <label for="calcBoard">Board type</label>
+        <select id="calcBoard">
+          <option value="bb">Bed &amp; Breakfast</option>
+          <option value="ai">All Inclusive (breakfast &amp; dinner)</option>
+        </select>
+        <div class="calc-inline-note">
+          Base room: $40 / night, B&amp;B +$10, All Inclusive +$25.
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <label for="calcLessonType">Lesson type</label>
+        <select id="calcLessonType">
+          <option value="none">No lessons</option>
+          <option value="private">Private (per hour)</option>
+          <option value="group">Group (per hour)</option>
+          <option value="beginner">Beginner Course (3 days / 8 hrs)</option>
+          <option value="progression">Progression Course (3 days / 8 hrs)</option>
+        </select>
+        <div class="calc-inline-note">
+          Private: $55 / hr · Group: $40 / hr · Courses use fixed prices.
+        </div>
+      </div>
+
+      <div class="calc-field" id="calcLessonHoursField">
+        <label for="calcLessonHours">Hours (for private / group)</label>
+        <input type="number" id="calcLessonHours" min="1" value="2">
+        <div class="calc-inline-note">
+          Minimum 1 hour. For courses, hours are built in.
+        </div>
+      </div>
+
+      <div class="calc-field">
+        <label for="calcRentalType">Rental</label>
+        <select id="calcRentalType">
+          <option value="none">No rental</option>
+          <option value="hour">Hourly rental</option>
+          <option value="day">1 full day</option>
+          <option value="three">3 days package</option>
+          <option value="week">1 week package</option>
+        </select>
+        <div class="calc-inline-note">
+          Hour: $35 · 1 day: $125 · 3 days: $360 · Week: $875 (promo).
+        </div>
+      </div>
+
+      <div class="calc-field" id="calcRentalHoursField">
+        <label for="calcRentalHours">Rental hours (if hourly)</label>
+        <input type="number" id="calcRentalHours" min="1" value="2">
+        <div class="calc-inline-note">
+          Only used for hourly rental.
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="calc-summary">
+      <div>Accommodation: <strong id="calcAccomPrice">$0.00</strong></div>
+      <div>Lessons: <strong id="calcLessonPrice">$0.00</strong></div>
+      <div>Rental: <strong id="calcRentalPrice">$0.00</strong></div>
+      <div>Insurance: <strong id="calcInsurance">$0.00</strong></div>
+      <div>Discount: <strong id="calcDiscountLabel">–</strong></div>
+      <div>Total package: <strong id="calcTotal">$0.00</strong></div>
+    </div>
+
+    <button class="book-btn" type="button">
+      Request this package via WhatsApp or Email
+    </button>
+  </div>
+</div>
+
+<script>
+/* ================== TABLE FILTERS + SEARCH ================== */
+
+function applyTableFilters() {
+  const searchValue = document.getElementById("searchInput").value.toLowerCase();
+  const levelValue  = document.getElementById("levelFilter").value;
+  const boardValue  = document.getElementById("boardFilter").value;
+  const pkgRows = document.querySelectorAll("#packageTable tbody tr.pkg-row");
+
+  pkgRows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    const rowLevel = row.getAttribute("data-level") || "";
+    const rowBoard = row.children[3].innerText;
+    const matchesSearch = text.includes(searchValue);
+    const matchesLevel  = !levelValue || rowLevel === levelValue;
+    const matchesBoard  = !boardValue || rowBoard === boardValue;
+
+    const visible = matchesSearch && matchesLevel && matchesBoard;
+    row.style.display = visible ? "" : "none";
+
+    const detail = row.nextElementSibling;
+    if (detail && detail.classList.contains("details-row")) {
+      detail.style.display = visible && row.classList.contains("open") ? "table-row" : "none";
+    }
+  });
+}
+
+document.getElementById("searchInput").addEventListener("keyup", applyTableFilters);
+document.getElementById("levelFilter").addEventListener("change", applyTableFilters);
+document.getElementById("boardFilter").addEventListener("change", applyTableFilters);
+
+/* SEARCH SUGGESTION CHIPS */
+document.querySelectorAll(".search-suggestions span").forEach(chip => {
+  chip.addEventListener("click", () => {
+    const term = chip.getAttribute("data-term");
+    const input = document.getElementById("searchInput");
+    input.value = term;
+    applyTableFilters();
+    input.focus();
+  });
+});
+
+/* LEVEL TOGGLE BUTTONS */
+document.querySelectorAll(".level-toggle-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".level-toggle-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const level = btn.getAttribute("data-level") || "";
+    document.getElementById("levelFilter").value = level;
+    applyTableFilters();
+  });
+});
+
+/* ================== ROW EXPANSION ================== */
+
+function setupRowExpansion() {
+  const pkgRows = document.querySelectorAll("#packageTable tbody tr.pkg-row");
+  pkgRows.forEach(row => {
+    row.addEventListener("click", (e) => {
+      const isOpen = row.classList.contains("open");
+      // close all
+      pkgRows.forEach(r => {
+        r.classList.remove("open");
+        const dr = r.nextElementSibling;
+        if (dr && dr.classList.contains("details-row")) {
+          dr.style.display = "none";
+        }
+      });
+      // open this one if it was closed
+      if (!isOpen) {
+        row.classList.add("open");
+        const detail = row.nextElementSibling;
+        if (detail && detail.classList.contains("details-row")) {
+          detail.style.display = "table-row";
+          detail.style.animation = "fadeSlide 0.25s ease";
+        }
+      }
+    });
+  });
+}
+setupRowExpansion();
+
+/* ================== COLUMN SORTING (SMART, WITH DETAIL ROWS) ================== */
+
+document.querySelectorAll("#packageTable thead th").forEach((header, index) => {
+  header.addEventListener("click", () => {
+    const table = document.getElementById("packageTable");
+    const tbody = table.querySelector("tbody");
+    const pkgRows = Array.from(tbody.querySelectorAll("tr.pkg-row"));
+    const ascending = !header.classList.contains("asc");
+
+    document.querySelectorAll("#packageTable thead th").forEach(h => h.classList.remove("asc", "desc"));
+    header.classList.add(ascending ? "asc" : "desc");
+
+    pkgRows.sort((a, b) => {
+      let x = a.children[index].innerText.replace(/[$,%]/g, "").trim();
+      let y = b.children[index].innerText.replace(/[$,%]/g, "").trim();
+      const numX = parseFloat(x);
+      const numY = parseFloat(y);
+
+      if (!isNaN(numX) && !isNaN(numY)) {
+        return ascending ? numX - numY : numY - numX;
+      }
+      return ascending ? x.localeCompare(y) : y.localeCompare(x);
+    });
+
+    // Re-append packages with their detail rows
+    pkgRows.forEach(row => {
+      const detail = row.nextElementSibling;
+      tbody.appendChild(row);
+      if (detail && detail.classList.contains("details-row")) {
+        tbody.appendChild(detail);
+      }
+    });
+
+    // update from-price label based on new order (same min, but harmless)
+    updateFromPriceLabel();
+  });
+});
+
+/* ================== BEST VALUE SORT ================== */
+
+function getBestValueScore(row) {
+  const daysText = row.children[2].innerText.trim();
+  const totalText = row.children[12].innerText.replace(/[$,]/g, "").trim();
+  const days = parseFloat(daysText) || 1;
+  const total = parseFloat(totalText) || 999999;
+  return total / days; // lower is better (cheaper per day)
+}
+
+document.getElementById("bestValueBtn").addEventListener("click", function () {
+  const btn = this;
+  const table = document.getElementById("packageTable");
+  const tbody = table.querySelector("tbody");
+  const pkgRows = Array.from(tbody.querySelectorAll("tr.pkg-row"));
+
+  const ascending = !btn.classList.contains("active");
+  btn.classList.toggle("active", ascending);
+
+  pkgRows.sort((a, b) => {
+    const aScore = getBestValueScore(a);
+    const bScore = getBestValueScore(b);
+    return ascending ? aScore - bScore : bScore - aScore;
+  });
+
+  pkgRows.forEach(row => {
+    const detail = row.nextElementSibling;
+    tbody.appendChild(row);
+    if (detail && detail.classList.contains("details-row")) {
+      tbody.appendChild(detail);
+    }
+  });
+
+  updateFromPriceLabel();
+});
+
+/* ================== NEW: “FROM $X PER DAY” LABEL ================== */
+
+function updateFromPriceLabel() {
+  const label = document.getElementById("fromPriceLabel");
+  if (!label) return;
+  const rows = document.querySelectorAll("#packageTable tbody tr.pkg-row");
+  let minPerDay = Infinity;
+
+  rows.forEach(row => {
+    if (row.style.display === "none") return; // only consider visible packages
+    const daysText = row.children[2].innerText.trim();
+    const totalText = row.children[12].innerText.replace(/[$,]/g, "").trim();
+    const days = parseFloat(daysText) || 1;
+    const total = parseFloat(totalText) || 0;
+    if (days > 0 && total > 0) {
+      const perDay = total / days;
+      if (perDay < minPerDay) minPerDay = perDay;
+    }
+  });
+
+  if (minPerDay === Infinity) {
+    label.textContent = "Packages available – adjust filters to see prices per day.";
+  } else {
+    label.textContent = "From $" + minPerDay.toFixed(2) + " per day kite & stay packages";
+  }
+}
+
+/* ================== LIVE CALCULATOR ================== */
+
+const rates = {
+  accomBase: 40,
+  bbExtra: 10,
+  aiExtra: 25,
+  privateHour: 55,
+  groupHour: 40,
+  beginnerCourse: 515,
+  progressionCourse: 635,
+  rentalHour: 35,
+  rentalDay: 125,
+  rentalThree: 360,
+  rentalWeek: 875,
+  insurancePerDay: 10
+};
+
+const calcDays        = document.getElementById("calcDays");
+const calcDaysLabel   = document.getElementById("calcDaysLabel");
+const calcBoard       = document.getElementById("calcBoard");
+const calcLessonType  = document.getElementById("calcLessonType");
+const calcLessonHours = document.getElementById("calcLessonHours");
+const lessonHoursField= document.getElementById("calcLessonHoursField");
+const calcRentalType  = document.getElementById("calcRentalType");
+const calcRentalHours = document.getElementById("calcRentalHours");
+const rentalHoursField= document.getElementById("calcRentalHoursField");
+
+function formatMoney(val) {
+  return "$" + val.toFixed(2);
+}
+
+function calculatePackage() {
+  const days = Math.max(1, parseInt(calcDays.value, 10) || 1);
+  calcDaysLabel.textContent = days + (days === 1 ? " day" : " days");
+
+  const boardType = calcBoard.value;
+  const lessonType = calcLessonType.value;
+  const rentalType = calcRentalType.value;
+
+  /* Accommodation */
+  const boardExtra = boardType === "ai" ? rates.aiExtra : rates.bbExtra;
+  const accomPerNight = rates.accomBase + boardExtra;
+  const accomPrice = accomPerNight * days;
+
+  /* Lessons */
+  let lessonPrice = 0;
+  if (lessonType === "private") {
+    const hrs = Math.max(1, parseInt(calcLessonHours.value, 10) || 1);
+    lessonPrice = hrs * rates.privateHour;
+  } else if (lessonType === "group") {
+    const hrs = Math.max(1, parseInt(calcLessonHours.value, 10) || 1);
+    lessonPrice = hrs * rates.groupHour;
+  } else if (lessonType === "beginner") {
+    lessonPrice = rates.beginnerCourse;
+  } else if (lessonType === "progression") {
+    lessonPrice = rates.progressionCourse;
+  }
+
+  /* Rental */
+  let rentalPrice = 0;
+  if (rentalType === "hour") {
+    const hrs = Math.max(1, parseInt(calcRentalHours.value, 10) || 1);
+    rentalPrice = hrs * rates.rentalHour;
+  } else if (rentalType === "day") {
+    rentalPrice = rates.rentalDay;
+  } else if (rentalType === "three") {
+    rentalPrice = rates.rentalThree;
+  } else if (rentalType === "week") {
+    rentalPrice = rates.rentalWeek;
+  }
+
+  /* Insurance only if they go on the water at all */
+  const onWater = lessonType !== "none" || rentalType !== "none";
+  const insurance = onWater ? days * rates.insurancePerDay : 0;
+
+  /* Discount by stay length */
+  let discountRate = 0;
+  if (days >= 7) discountRate = 0.20;
+  else if (days >= 5) discountRate = 0.15;
+  else if (days >= 3) discountRate = 0.10;
+  else if (days >= 2) discountRate = 0.05;
+
+  const totalBefore = accomPrice + lessonPrice + rentalPrice + insurance;
+  const totalAfter  = totalBefore * (1 - discountRate);
+
+  document.getElementById("calcAccomPrice").textContent   = formatMoney(accomPrice);
+  document.getElementById("calcLessonPrice").textContent  = formatMoney(lessonPrice);
+  document.getElementById("calcRentalPrice").textContent  = formatMoney(rentalPrice);
+  document.getElementById("calcInsurance").textContent    = formatMoney(insurance);
+  document.getElementById("calcTotal").textContent        = formatMoney(totalAfter);
+
+  document.getElementById("calcDiscountLabel").textContent =
+    discountRate > 0 ? (Math.round(discountRate * 100) + "% on full package") : "No discount on stays under 2 days";
+}
+
+/* Show / hide hour fields */
+function updateVisibility() {
+  const lt = calcLessonType.value;
+  lessonHoursField.style.display = (lt === "private" || lt === "group") ? "block" : "none";
+  rentalHoursField.style.display = (calcRentalType.value === "hour") ? "block" : "none";
+}
+
+/* Attach events */
+[calcDays, calcBoard, calcLessonType, calcLessonHours,
+ calcRentalType, calcRentalHours].forEach(el => {
+  el.addEventListener("input", () => {
+    updateVisibility();
+    calculatePackage();
+  });
+});
+
+/* Initial state */
+updateVisibility();
+calculatePackage();
+updateFromPriceLabel();
+</script>
+
+  </div>
+</div>
+
 <section id="faq" class="container" style="padding-top:28px">
   <h2>FAQ</h2>
   <div style="display:grid;gap:10px;max-width:900px">
@@ -126,7 +1320,6 @@
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact" class="container" style="padding-top:28px;padding-bottom:48px">
   <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
     <div><h2>Ready to plan?</h2><p class="small-muted">Message us and we'll help pick the right package.</p></div>
@@ -134,14 +1327,10 @@
   </div>
 </section>
 
-<footer style="text-align:center;color:var(--muted);padding:20px 0">© 2025 Cambodia Kiteboarding — IKO guided instruction</footer>
+<footer class="footer">© 2025 Cambodia Kiteboarding — IKO guided instruction</footer>
 
-<!-- Lightbox modal -->
 <div id="lightbox" class="modal" aria-hidden="true">
-  <div class="modal-inner">
-    <button class="modal-close" onclick="closeLightbox()">✕</button>
-    <div id="lightboxContent" class="modal-content"></div>
-  </div>
+  <div class="modal-inner"><button class="modal-close" onclick="closeLightbox()">✕</button><div id="lightboxContent" class="modal-content"></div></div>
 </div>
 
 <script src="script.js"></script>
