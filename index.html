@@ -1,9 +1,149 @@
 <!doctype html>
-<html><head>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cambodia Kiteboarding — Richard.file42</title>
+<meta name="description" content="Cambodia Kiteboarding interactive demo — hero video modal, packages, gallery and calculator." />
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Richard.file42 Interactive Site</h1>
-<p>This is a placeholder. Replace with full HTML from ChatGPT response.</p>
+<!-- Header -->
+<header class="site-header" role="banner">
+  <div class="header-inner container">
+    <div class="brand">Cambodia Kiteboarding</div>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul id="navList">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#hotel">Hotel</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-underline" id="navUnderline" aria-hidden="true"></div>
+    </nav>
+
+    <div class="actions">
+      <button id="themeToggle" class="btn small ghost" aria-pressed="false">Toggle</button>
+      <button class="btn small" onclick="document.querySelector('#calculator').scrollIntoView({behavior:'smooth'})">Build Quote</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO with VIDEO SLOT -->
+<section id="hero" class="hero">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+
+  <div class="hero-card container" role="region" aria-label="hero card">
+    <div class="hero-left">
+      <h1>Learn to Kite in Cambodia — Safe, shallow & certified</h1>
+      <p class="lead">IKO-guided lessons on Kampong Bay estuary. Ideal for beginners, kids and families — Villa Vedici is our base.</p>
+
+      <div class="packages" id="packageButtons" aria-hidden="false">
+        <!-- interactive package buttons injected by script -->
+      </div>
+
+      <div class="symbols" aria-hidden="true">
+        <div class="symbol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#e6f9fb"/></svg><span>Safe Spot</span></div>
+        <div class="symbol"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4" fill="#fff3e6"/></svg><span>IKO Certified</span></div>
+        <div class="symbol"><svg viewBox="0 0 24 24"><path d="M2 12h20" stroke="#e6f9fb" stroke-width="2"/></svg><span>Shallow Water</span></div>
+      </div>
+    </div>
+
+    <div>
+      <!-- Video slot (Option A: modal play) -->
+      <div class="video-slot" id="videoSlot" role="button" aria-label="Play intro video" tabindex="0">
+        <div class="play" id="playBtn">▶</div>
+        <div class="video-desc">Play intro — 2 min</div>
+      </div>
+
+      <!-- condensed CTA -->
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <a class="btn ghost small" href="#gallery">View Gallery</a>
+        <a class="btn small" href="https://wa.me/85589392068?text=Hi%20I%20need%20help%20choosing%20a%20package" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL & GALLERY -->
+<section id="hotel" class="container" style="padding-top:22px">
+  <h2>Villa Vedici — Overview</h2>
+  <p class="small-muted">Villa Vedici riverside resort in Kampot is our base for the all-inclusive packages.</p>
+
+  <div id="gallery" class="gallery">
+    <div class="g-item" tabindex="0" onclick="openLightbox('Villa 1')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
+    <div class="g-item" tabindex="0" onclick="openLightbox('Villa 2')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
+    <div class="g-item" tabindex="0" onclick="openLightbox('Villa 3')" onmousemove="imgParallax(event,this)"><div class="move"></div><div class="g-label">Villa placeholder</div></div>
+  </div>
+
+  <div style="text-align:center;margin-top:12px">
+    <a class="btn" href="https://www.booking.com/hotel/kh/villa-vedici.html" target="_blank">Book Villa Vedici on Booking.com</a>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section id="calculator" class="container" style="padding-top:28px">
+  <h2>Build your All-Inclusive Kite Package</h2>
+
+  <div class="calc-wrap" id="ckbCalculator">
+    <div class="calc-row">
+      <div class="calc-field"><label><strong>Nights</strong></label><input id="nights" type="number" min="1" value="5"></div>
+      <div class="calc-field"><label><strong>Number of people</strong></label><input id="people" type="number" min="1" value="2"></div>
+      <div class="calc-field"><label><strong>Meal plan</strong></label><select id="meal"><option value="none">No meals</option><option value="bb">B&amp;B +$5</option><option value="all">All-Inclusive +$30</option></select></div>
+      <div class="calc-field"><label><strong>Course length (days)</strong></label><select id="courseDays"><option value="0">0</option><option value="3">3</option><option value="5">5</option><option value="7">7</option></select></div>
+    </div>
+    <div class="calc-row" style="margin-top:10px">
+      <div class="calc-field"><label><strong>Equipment rental hrs / person</strong></label><input id="rentalHours" type="number" min="0" value="0"><div class="small-muted">Rate $30 / hr</div></div>
+      <div class="calc-field"><label><strong>Private transport</strong></label><div style="margin-top:8px"><input id="privateTransport" type="checkbox"> <label for="privateTransport">Yes — $55 flat</label></div></div>
+      <div class="calc-field"><label><strong>Photoshoot</strong></label><div style="margin-top:8px"><input id="photoshoot" type="checkbox"> <label for="photoshoot">Yes — $55 / person</label></div></div>
+      <div class="calc-field"><label><strong>Group lesson</strong></label><div style="margin-top:8px"><input id="groupLesson" type="checkbox"> <label for="groupLesson">Group toggled = $80/hr</label></div><div class="small-muted" style="margin-top:6px">2 hours/day / person</div></div>
+    </div>
+
+    <div class="calc-footer">
+      <button id="calcBtn" class="btn">Calculate</button>
+      <button id="resetBtn" class="btn ghost">Reset</button>
+      <div class="calc-total">Estimated: <strong id="totalDisplay">$0.00</strong></div>
+    </div>
+
+    <div class="result-box" id="calcResults">
+      <div id="breakdown"><em>Press Calculate for a full breakdown</em></div>
+      <div style="margin-top:10px;display:flex;gap:8px"><a id="emailRequest" class="btn-link" href="#">Request Booking (email)</a><a id="waRequest" class="btn-wa" href="#">WhatsApp Owner</a></div>
+      <div class="small-muted" style="margin-top:12px"><strong>Note:</strong> Speedboat transfer $15/day/person. Insurance mandatory $10/day/person.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="container" style="padding-top:28px">
+  <h2>FAQ</h2>
+  <div style="display:grid;gap:10px;max-width:900px">
+    <div class="card"><strong>Wind seasons</strong><p class="small-muted">Best winds Dec–Apr and Jun–Oct</p></div>
+    <div class="card"><strong>Learning spot depth</strong><p class="small-muted">Knee to waist — safe for kids & beginners</p></div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="container" style="padding-top:28px;padding-bottom:48px">
+  <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <div><h2>Ready to plan?</h2><p class="small-muted">Message us and we'll help pick the right package.</p></div>
+    <div style="display:flex;gap:10px"><a class="btn wa" href="https://wa.me/85589392068?text=Hi%20I%20need%20help" target="_blank">WhatsApp</a><a class="btn ghost" href="#packages">See Packages</a></div>
+  </div>
+</section>
+
+<footer style="text-align:center;color:var(--muted);padding:20px 0">© 2025 Cambodia Kiteboarding — IKO guided instruction</footer>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="modal" aria-hidden="true">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeLightbox()">✕</button>
+    <div id="lightboxContent" class="modal-content"></div>
+  </div>
+</div>
+
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
